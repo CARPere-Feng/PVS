@@ -24,12 +24,18 @@
     <ClInclude Include="__vm\.PVS.vsarduino.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="hardware\PWM\iPWM.h">
+    <ClInclude Include="hardware\PWM\iFastPWM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hardware\eValve\electricValve.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="hardware\PWM\iPWM.cpp">
+    <ClCompile Include="hardware\PWM\iFastPWM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hardware\eValve\electricValve.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

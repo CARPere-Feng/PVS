@@ -116,11 +116,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="hardware\PWM\iPWM.h" />
+    <ClInclude Include="hardware\eValve\electricValve.h" />
+    <ClInclude Include="hardware\PWM\iFastPWM.h" />
     <ClInclude Include="__vm\.PVS.vsarduino.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="hardware\PWM\iPWM.cpp" />
+    <ClCompile Include="hardware\eValve\electricValve.cpp" />
+    <ClCompile Include="hardware\PWM\iFastPWM.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
