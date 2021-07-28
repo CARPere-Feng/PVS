@@ -11,12 +11,14 @@
 	#include "WProgram.h"
 #endif
 
+#define triCom(a,b,c) a##b##c
+
 namespace Hardware {
 class FastPWM
 {
 public:
 	FastPWM() = default;
-	explicit FastPWM(const int& timer_num, const char& port_num);
+	explicit FastPWM(const int& pin_num);
 
 	// no copy, no assign, no move
 	FastPWM(const FastPWM&) = delete;
@@ -26,6 +28,7 @@ public:
 	// set the duration of high voltage within one cycle
 	int setDuration(const double& max, const double& value);
 	int setDuration(const int& wid);
+	int enableDuration();
 
 	// set the PWM frequence divider
 	int setFreqDiv(const int& divider);
@@ -40,12 +43,11 @@ private:
 	void setWidth(const int& a) { width = a; }
 
 public:
-	int timer;	// which timer is this pwm port uses
-	char portNum; // PWM output port number
+	int pin_num_;	// the PWM pin number
 
 protected:
 	int div;
-	int width;	// High voltage width
+	int width;	// High voltage width [0, 255]
 
 };	// class PWM
 }	// namespace Hardware

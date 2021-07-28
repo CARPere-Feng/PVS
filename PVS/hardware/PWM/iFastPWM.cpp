@@ -2,13 +2,15 @@
 
 namespace Hardware {
 
-	FastPWM::FastPWM(const int& timer_num, const char& port_num) {
-		timer = timer_num;
-		portNum = port_num;
+	FastPWM::FastPWM(const int& pin_num) {
+		pin_num_ = pin_num;
 	}
 
 	void FastPWM::setPWMFreq(const int& divider) {
-		if (timer == 2) {
+		switch (digitalPinToTimer(pin_num_) )
+		{
+		case TIMER2A :
+		case TIMER2B :
 			switch (divider)
 			{
 			case 1:
@@ -28,8 +30,9 @@ namespace Hardware {
 			default:
 				break;
 			}
-		}
-		else if (timer == 0) {
+			break;
+		case TIMER0A :
+		case TIMER0B :
 			switch (divider)
 			{
 			case 1:
@@ -45,8 +48,10 @@ namespace Hardware {
 			default:
 				break;
 			}
-		}
-		else if (timer == 1) {
+			break;
+		case TIMER1A:
+		case TIMER1B:
+		case TIMER1C:
 			switch (divider)
 			{
 			case 1:
@@ -62,8 +67,10 @@ namespace Hardware {
 			default:
 				break;
 			}
-		}
-		else if (timer == 3) {
+			break;
+		case TIMER3A:
+		case TIMER3B:
+		case TIMER3C:
 			switch (divider)
 			{
 			case 1:
@@ -79,8 +86,10 @@ namespace Hardware {
 			default:
 				break;
 			}
-		}
-		else if (timer == 4) {
+			break;
+		case TIMER4A:
+		case TIMER4B:
+		case TIMER4C:
 			switch (divider)
 			{
 			case 1:
@@ -96,8 +105,10 @@ namespace Hardware {
 			default:
 				break;
 			}
-		}
-		else if (timer == 5) {
+			break;
+		case TIMER5A:
+		case TIMER5B:
+		case TIMER5C:
 			switch (divider)
 			{
 			case 1:
@@ -113,6 +124,7 @@ namespace Hardware {
 			default:
 				break;
 			}
+			break;
 		}
 	}
 
@@ -127,12 +139,17 @@ namespace Hardware {
 		return 1;
 	}
 
+	int FastPWM::enableDuration() {
+		analogWrite(pin_num_, width);
+	}
+
+
 	int FastPWM::setFreqDiv(const int& divider) {
 		div = divider;
 		setPWMFreq(div);
 	}
 
 	void FastPWM::initFastPWM() {
-		pinMode(4, OUTPUT);
+		pinMode(pin_num_, OUTPUT);
 	}
 } // namespace Hardware

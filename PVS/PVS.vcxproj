@@ -129,7 +129,7 @@
   </ImportGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties arduino.upload.port="COM4" config.Debug.customdebug_mega_atmega2560_debugger_type="universal" />
+      <UserProperties arduino.upload.port="COM4" config.Debug.customdebug_mega_atmega2560_debugger_type="universal" VM.DebugVariablesWindow.ColumnVisibleBreakPointName="0" VM.DebugVariablesWindow.ColumnVisibleFunctionName="0" VM.DebugVariablesWindow.ColumnVisibleVariableHitCount="1" VM.DebugVariablesWindow.ColumnVisibleVariableValueBinary="0" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

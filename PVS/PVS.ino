@@ -7,27 +7,34 @@
 */
 
 
+#include <Arduino.h>
 #include "hardware/eValve/electricValve.h"
 
+int vpos[] = { 2, 3, 4, 5, 6, 7 };
+int vneg[] = { 8, 9, 10, 11, 12, 13 };
+//Hardware::ElectricValve* valve0 = new Hardware::ElectricValve(3, 'B', vpos[0]);
+//Hardware::ElectricValve* valve1 = new Hardware::ElectricValve(3, 'C', vpos[1]);
+//Hardware::ElectricValve* valve2 = new Hardware::ElectricValve(0, 'B', vpos[2]);
+//Hardware::ElectricValve* valve3 = new Hardware::ElectricValve(3, 'A', vpos[3]);
+//Hardware::ElectricValve* valve4 = new Hardware::ElectricValve(4, 'A', vpos[4]);
+//Hardware::ElectricValve* valve5 = new Hardware::ElectricValve(4, 'B', vpos[5]);
 
 void setup() {
-    Hardware::ElectricValve* valve1 = new Hardware::ElectricValve(0, 'B');
-    valve1->setDuration(100);   // 100 of 255
-    valve1->init();
+    Hardware::ElectricValve valveve(vpos[3]);
+    valveve.init();
+    valveve.setDuration(1);
+    valveve.enableDuration();
+    
+    //valve0->init();
+    //valve1->init();
+    //valve2->init();
+    //valve3->init();
+    //valve4->init();
+    //valve5->init();
 }
 
-// the loop routine runs over and over again forever:
+
 void loop() {
-    //// set the brightness of pin 9:
-    analogWrite(4, 100);
-
-    //// change the brightness for next time through the loop:
-    //brightness = brightness + fadeAmount;
-
-    //// reverse the direction of the fading at the ends of the fade:
-    //if (brightness <= 0 || brightness >= 255) {
-    //    fadeAmount = -fadeAmount;
-    //}
-    //// wait for 30 milliseconds to see the dimming effect
-    delay(10);
+    analogWrite(vpos[3], 10);
+    delay(100);
 }
