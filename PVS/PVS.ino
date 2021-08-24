@@ -12,6 +12,7 @@
 
 int vpos[] = { 2, 3, 4, 5, 6, 7 };
 int vneg[] = { 8, 9, 10, 11, 12, 13 };
+int prsSensor[] = { A10, A11, A12, A13, A14, A15 };
 //Hardware::ElectricValve* valve0 = new Hardware::ElectricValve(3, 'B', vpos[0]);
 //Hardware::ElectricValve* valve1 = new Hardware::ElectricValve(3, 'C', vpos[1]);
 //Hardware::ElectricValve* valve2 = new Hardware::ElectricValve(0, 'B', vpos[2]);
@@ -20,21 +21,21 @@ int vneg[] = { 8, 9, 10, 11, 12, 13 };
 //Hardware::ElectricValve* valve5 = new Hardware::ElectricValve(4, 'B', vpos[5]);
 
 void setup() {
-    Hardware::ElectricValve valveve(vpos[3]);
+    Hardware::ElectricValve valveve(vpos[0]);
     valveve.init();
-    valveve.setDuration(1);
+    valveve.setDuration(200);
     valveve.enableDuration();
-    
-    //valve0->init();
-    //valve1->init();
-    //valve2->init();
-    //valve3->init();
-    //valve4->init();
-    //valve5->init();
+
+    pinMode(prsSensor[5], INPUT);
+    Serial.begin(38400);    // initialize serial
 }
 
 
 void loop() {
-    analogWrite(vpos[3], 10);
+    //analogWrite(vpos[0], 200);   // set duration
+    //delay(100);
+    int sensor_reading = analogRead(prsSensor[5]);
+    Serial.print(sensor_reading);   // print the data to the serial
+    Serial.print('\n');
     delay(100);
 }
