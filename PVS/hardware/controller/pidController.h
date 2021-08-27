@@ -19,6 +19,7 @@ public:
 private:
 	double neg_output_ = 0;
 	double pos_output_ = 0;
+	double* output_;
 };	// class PID
 }	// namespace Hardware
 

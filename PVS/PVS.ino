@@ -18,9 +18,9 @@ double Kp = 2, Ki = 1, Kd = 0;
 double input = 0, output = 0, setpoint = 0;
 
 // create electric valve
-Hardware::ElectricValve valveve(vpos[0]);
+Hardware::ElectricValve valveve(vneg[0]);
 Hardware::PIDController pi1(&input, &output, &setpoint, Kp, Ki, Kd, DIRECT);
-Hardware::Sensor::Pres100300 senser1(prsSensor[5]);
+Hardware::Sensor::Pres100300 senser1(prsSensor[1]);
 
 void setup() {
     // initialize electric valves
@@ -40,18 +40,22 @@ void setup() {
 }
 
 void loop() {
+    // electric valve pwm
+    valveve.setDuration(100);
+    valveve.enableDuration();
+
     // update sensor input
     double sensor1_Kpa = senser1.pressureKPa();
 
-    // one control loop
-    input = sensor1_Kpa; setpoint = input - 3; // control it to 5 KPa
-    if (pi1.npCompute()) {
-        valveve.setDuration(output);    // analogWrite(PIN_OUTPUT, output_value)
-        valveve.enableDuration();
-    }
+    //// one control loop
+    //input = sensor1_Kpa; setpoint = input - 3; // control it to 5 KPa
+    //if (pi1.npCompute()) {
+    //    valveve.setDuration(output);    // analogWrite(PIN_OUTPUT, output_value)
+    //    valveve.enableDuration();
+    //}
 
     // send serial message to computer
-    Serial.print(output);
+    Serial.print(sensor1_Kpa);
     // Serial.print(senser1.readVolt());   // print the data to the serial
     Serial.print('\n');
     delay(100);
