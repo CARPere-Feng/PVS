@@ -36,6 +36,12 @@
     <ClInclude Include="hardware\sensor\AnalogSensor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="systems\Origami.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\definition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="hardware\PWM\iFastPWM.cpp">

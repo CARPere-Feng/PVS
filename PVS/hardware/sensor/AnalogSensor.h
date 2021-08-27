@@ -1,7 +1,11 @@
 #ifndef _ANALOG_SENSOR_H_
 #define _ANALOG_SENSOR_H_
 
-#include <Arduino.h>
+#if defined(ARDUINO) && ARDUINO >= 100
+#include "arduino.h"
+#else
+#include "WProgram.h"
+#endif
 
 namespace Hardware {
 	namespace Sensor {

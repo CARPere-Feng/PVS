@@ -117,6 +117,8 @@
     <ClInclude Include="hardware\PWM\iFastPWM.h" />
     <ClInclude Include="hardware\sensor\AnalogSensor.h" />
     <ClInclude Include="hardware\sensor\Pres100300.h" />
+    <ClInclude Include="systems\Origami.h" />
+    <ClInclude Include="utils\definition.h" />
     <ClInclude Include="__vm\.PVS.vsarduino.h" />
   </ItemGroup>
   <ItemGroup>

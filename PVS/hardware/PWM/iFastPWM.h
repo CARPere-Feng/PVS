@@ -11,7 +11,7 @@
 	#include "WProgram.h"
 #endif
 
-#define triCom(a,b,c) a##b##c
+#include "../../utils/definition.h"
 
 namespace Hardware {
 class FastPWM
