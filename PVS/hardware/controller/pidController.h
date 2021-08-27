@@ -1,27 +1,24 @@
 #ifndef _PID_CONTROLLER_H_
 #define _PID_CONTROLLER_H_
 
-#include "Pres100300.h"
+#include <PID_v1.h>
 
 namespace Hardware {
-class PIDController
+class PIDController : public ::PID
 {
 public:
 	PIDController() = default;
+	explicit PIDController(double*, double*, double*,        // * constructor.  links the PID to the Input, Output, and 
+						   double, double, double, int);//   Setpoint.  Initial tuning parameters are also set here.
 	~PIDController() = default;
 
-	void input(const double& des, const double& prs);
-	int compute();
-	int output();
+	bool npCompute();
 
+	double getPosOutput() { return pos_output_; }
+	double getNegOutput() { return neg_output_; }
 private:
-	int ctrlOutput_ = 0;
-	double desired_ = 0;
-	int curpressure_ = 0;
-
-	double P = 0;
-	double I = 0;
-	double D = 0;
+	double neg_output_ = 0;
+	double pos_output_ = 0;
 };	// class PID
 }	// namespace Hardware
 

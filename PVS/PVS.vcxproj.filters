@@ -16,18 +16,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="PVS.ino" />
-    <None Include="src\arduino folders read me.txt">
-      <Filter>Misc Files</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="__vm\.PVS.vsarduino.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="hardware\PWM\iFastPWM.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="hardware\eValve\electricValve.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hardware\controller\pidController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hardware\sensor\Pres100300.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="__vm\.PVS.vsarduino.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hardware\sensor\AnalogSensor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -36,6 +42,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="hardware\eValve\electricValve.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hardware\controller\pidController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hardware\sensor\Pres100300.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hardware\sensor\AnalogSensor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
