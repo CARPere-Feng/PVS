@@ -12,6 +12,7 @@ public:
 						   double, double, double, int);//   Setpoint.  Initial tuning parameters are also set here.
 	~PIDController() = default;
 
+	// seperate positive output and negtive output
 	bool npCompute();
 
 	double getPosOutput() { return pos_output_; }

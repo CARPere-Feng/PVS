@@ -20,9 +20,9 @@ public:
 	FastPWM() = default;
 	explicit FastPWM(const int& pin_num);
 
-	// no copy, no assign, no move
-	FastPWM(const FastPWM&) = delete;
-	FastPWM& operator=(const FastPWM&) = delete;
+	//// no copy, no assign, no move
+	//FastPWM(const FastPWM&) = delete;
+	//FastPWM& operator=(const FastPWM&) = delete;
 	~FastPWM() = default;
 
 	// set the duration of high voltage within one cycle

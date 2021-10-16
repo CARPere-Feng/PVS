@@ -11,9 +11,9 @@ public:
 	explicit ElectricValve(const int& pin_num);
 	~ElectricValve() = default;
 
-	// no copy, no assign, no move
-	ElectricValve(const ElectricValve&) = delete;
-	ElectricValve& operator=(const ElectricValve&) = delete;
+	//// no copy, no assign, no move
+	//ElectricValve(const ElectricValve&) = delete;
+	//ElectricValve& operator=(const ElectricValve&) = delete;
 
 
 	virtual void init();

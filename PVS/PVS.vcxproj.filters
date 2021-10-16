@@ -42,6 +42,12 @@
     <ClInclude Include="utils\definition.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="hardware\sensor\Pres4067.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hardware\controller\selfPID.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="hardware\PWM\iFastPWM.cpp">
@@ -57,6 +63,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="hardware\sensor\AnalogSensor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hardware\sensor\Pres4067.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hardware\controller\selfPID.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
